@@ -33,7 +33,7 @@ public class PreRequestFilter extends ZuulFilter {
     public Object run() throws ZuulException {
 
         RequestContext context = RequestContext.getCurrentContext();
-        context.set("startTime",System.currentTimeMillis());
+        context.set("startTime", System.currentTimeMillis());
         return null;
     }
 }

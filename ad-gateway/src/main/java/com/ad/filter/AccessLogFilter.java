@@ -23,7 +23,7 @@ public class AccessLogFilter extends ZuulFilter {
 
     @Override
     public int filterOrder() {
-        return FilterConstants.SEND_RESPONSE_FILTER_ORDER-1;
+        return FilterConstants.SEND_RESPONSE_FILTER_ORDER - 1;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class AccessLogFilter extends ZuulFilter {
         Long startTime = (Long) context.get("startTime");
         String uri = request.getRequestURI();
         long duration = System.currentTimeMillis() - startTime;
-        log.info("uri: "+ uri+", duration:"+duration/100+"ms");
+        log.info("uri: " + uri + ", duration:" + duration / 100 + "ms");
         return null;
     }
 }
