@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class PreRequestFilter extends ZuulFilter {
+
     @Override
     public String filterType() {
         return FilterConstants.PRE_TYPE;
