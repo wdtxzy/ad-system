@@ -17,6 +17,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class SponsorApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SponsorApplication.class,args);
+        SpringApplication.run(SponsorApplication.class, args);
     }
 }

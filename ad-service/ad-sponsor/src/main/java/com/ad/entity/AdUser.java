@@ -44,7 +44,7 @@ public class AdUser {
     @Column(name = "update_time", nullable = false)
     private Date updateTime;
 
-    public AdUser(String username, String token){
+    public AdUser(String username, String token) {
         this.username = username;
         this.token = token;
         this.userStatus = CommonStatus.VALID.getStatus();

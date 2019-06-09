@@ -30,7 +30,7 @@ public class AdUnitIt {
     @Column(name = "it_tag", nullable = false)
     private String itTag;
 
-    public AdUnitIt(Long unitId, String itTag){
+    public AdUnitIt(Long unitId, String itTag) {
         this.unitId = unitId;
         this.itTag = itTag;
     }

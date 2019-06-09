@@ -1,4 +1,4 @@
-package com.ad.entity.unit_condition;
+package com.ad.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,14 +8,14 @@ import javax.persistence.*;
 
 /**
  * @Author : wangdi
- * @Date : create in 2019/6/9 20:21
+ * @Date : create in 2019/6/9 21:30
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "ad_unit_keyword")
-public class AdUnitKeyword {
+@Table(name = "ad_creative")
+public class CreativeUnit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,15 +23,15 @@ public class AdUnitKeyword {
     private Long id;
 
     @Basic
+    @Column(name = "creative_id", nullable = false)
+    private Long creativeId;
+
+    @Basic
     @Column(name = "unit_id", nullable = false)
     private Long unitId;
 
-    @Basic
-    @Column(name = "keyword", nullable = false)
-    private String keyword;
-
-    public AdUnitKeyword(Long unitId, String keyword) {
+    public CreativeUnit(Long creativeId, Long unitId) {
+        this.creativeId = creativeId;
         this.unitId = unitId;
-        this.keyword = keyword;
     }
 }

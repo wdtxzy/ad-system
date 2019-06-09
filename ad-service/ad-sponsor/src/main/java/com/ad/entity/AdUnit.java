@@ -36,7 +36,9 @@ public class AdUnit {
     @Column(name = "unit_status", nullable = false)
     private Integer unitStatus;
 
-    /** 广告位类型（开屏，贴片，中贴...）*/
+    /**
+     * 广告位类型（开屏，贴片，中贴...）
+     */
     @Basic
     @Column(name = "position_type", nullable = false)
     private Integer positionType;
@@ -53,7 +55,7 @@ public class AdUnit {
     @Column(name = "update_time", nullable = false)
     private Date updateTime;
 
-    private AdUnit(Long planId, String unitName, Integer positionType, Long budget){
+    private AdUnit(Long planId, String unitName, Integer positionType, Long budget) {
         this.planId = planId;
         this.unitName = unitName;
         this.unitStatus = CommonStatus.VALID.getStatus();
