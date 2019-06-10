@@ -52,7 +52,7 @@ public class AdPlan {
     @Column(name = "update_time", nullable = false)
     private Date updateTime;
 
-    private AdPlan(Long userId, String planName, Date startDate, Date endDate) {
+    public AdPlan(Long userId, String planName, Date startDate, Date endDate) {
         this.userId = userId;
         this.planName = planName;
         this.planStatus = CommonStatus.VALID.getStatus();
