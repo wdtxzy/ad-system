@@ -1,8 +1,7 @@
 package com.ad.service;
 
 import com.ad.exception.AdException;
-import com.ad.vo.AdUnitResponse;
-import com.ad.vo.AdUnitResuest;
+import com.ad.vo.*;
 
 /**
  * @Author : wangdi
@@ -10,5 +9,13 @@ import com.ad.vo.AdUnitResuest;
  */
 public interface IAdUnitService {
 
-    AdUnitResponse createUnit(AdUnitResuest resuest) throws AdException;
+    AdUnitResponse createUnit(AdUnitResuest request) throws AdException;
+
+    AdUnitKeywordResponse createUnitKeyword(AdUnitKeywordRequest request)
+            throws AdException;
+
+    AdUnitItResponse createUnitIt(AdUnitItRequest request) throws AdException;
+
+    AdUnitDistrictResponse createUnitDistrict(AdUnitDistrictRequest request)
+            throws AdException;
 }
