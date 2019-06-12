@@ -1,0 +1,56 @@
+package com.ad.controller;
+
+import com.ad.entity.AdPlan;
+import com.ad.exception.AdException;
+import com.ad.service.IAdPlanService;
+import com.ad.vo.AdPlanGetRequest;
+import com.ad.vo.AdPlanRequest;
+import com.ad.vo.AdPlanResponse;
+import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+/**
+ * @Author : wangdi
+ * @Date : create in 2019/6/12 23:08
+ */
+@Slf4j
+@RestController
+public class AdPlanOPController {
+
+    @Autowired
+    private IAdPlanService planService;
+
+    @RequestMapping("/ad-plan/create")
+    public AdPlanResponse createAdPlan(
+            @RequestBody AdPlanRequest request)throws AdException {
+        log.info("ad-sponsor: create-AdPlan ->{}", JSON.toJSONString(request));
+        return planService.createAdPlan(request);
+    }
+
+    @RequestMapping("/ad-plan/queryByIds")
+    public List<AdPlan> getAdPlanByIds(
+            @RequestBody AdPlanGetRequest request)throws AdException{
+        log.info("ad-sponsor: get-AdPlan-By-Ids ->{}",JSON.toJSONString(request));
+        return planService.getAdPlanByIds(request);
+    }
+
+    @RequestMapping("/ad-plan/update")
+    public AdPlanResponse updateAdPlan(
+            @RequestBody AdPlanRequest request)throws AdException{
+        log.info("ad-sponsor: update-AdPlan ->{}",JSON.toJSONString(request));
+        return planService.updateAdplan(request);
+    }
+
+    @RequestMapping("/ad-plan/delete")
+    public void deleteAdPlan(
+            @RequestBody AdPlanRequest request)throws AdException{
+        log.info("ad-sponsor: delete-AdPlan ->{}",JSON.toJSONString(request));
+        planService.deleteAdPlan(request);
+    }
+}
