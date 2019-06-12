@@ -3,11 +3,14 @@ package com.ad.service.impl;
 import com.ad.constant.Constants;
 import com.ad.dao.AdPlanRepository;
 import com.ad.dao.AdUnitRepository;
+import com.ad.dao.CreativeRepository;
+import com.ad.dao.CreativeUnitRepository;
 import com.ad.dao.unit_condition.AdUnitDistrictRepository;
 import com.ad.dao.unit_condition.AdUnitItRepository;
 import com.ad.dao.unit_condition.AdUnitKeywordRepository;
 import com.ad.entity.AdPlan;
 import com.ad.entity.AdUnit;
+import com.ad.entity.CreativeUnit;
 import com.ad.entity.unit_condition.AdUnitDistrict;
 import com.ad.entity.unit_condition.AdUnitIt;
 import com.ad.entity.unit_condition.AdUnitKeyword;
@@ -42,6 +45,12 @@ public class AdUnitServiceImpl implements IAdUnitService {
 
     @Autowired
     private AdUnitDistrictRepository districtRepository;
+
+    @Autowired
+    private CreativeRepository creativeRepository;
+
+    @Autowired
+    private CreativeUnitRepository creativeUnitRepository;
 
     @Override
     public AdUnitResponse createUnit(AdUnitResuest request) throws AdException {
@@ -127,10 +136,39 @@ public class AdUnitServiceImpl implements IAdUnitService {
         return new AdUnitDistrictResponse(ids);
     }
 
+    @Override
+    public CreativeUnitResponse createCreativeUnit(CreativeUnitRequest request) throws AdException {
+        List<Long> unitIds = request.getList().stream()
+                .map(CreativeUnitRequest.CreativeUnitItem::getUnitId)
+                .collect(Collectors.toList());
+        List<Long> creativeIds = request.getList().stream()
+                .map(CreativeUnitRequest.CreativeUnitItem::getCreativeId)
+                .collect(Collectors.toList());
+        if (!(isRelatedUnitExist(unitIds) && isRelatedCreative(creativeIds))) {
+            throw new AdException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
+        }
+        List<CreativeUnit> creativeUnits = new ArrayList<>();
+        request.getList().forEach(x -> creativeUnits.add(
+                new CreativeUnit(x.getCreativeId(), x.getUnitId())
+        ));
+        List<Long> ids = creativeUnitRepository.saveAll(creativeUnits).stream()
+                .map(CreativeUnit::getId)
+                .collect(Collectors.toList());
+        return new CreativeUnitResponse(ids);
+    }
+
     private boolean isRelatedUnitExist(List<Long> unitIds) {
         if (CollectionUtils.isEmpty(unitIds)) {
             return false;
         }
         return unitRepository.findAllById(unitIds).size() == new HashSet<>(unitIds).size();
+    }
+
+    private boolean isRelatedCreative(List<Long> creativeIds) {
+        if (CollectionUtils.isEmpty(creativeIds)) {
+            return false;
+        }
+        return creativeRepository.findAllById(creativeIds).size() ==
+                new HashSet<>(creativeIds).size();
     }
 }
