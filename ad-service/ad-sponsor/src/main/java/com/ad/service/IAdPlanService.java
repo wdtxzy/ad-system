@@ -14,6 +14,13 @@ import java.util.List;
  */
 public interface IAdPlanService {
 
+    /**
+     * 增加投放计划
+     *
+     * @param request
+     * @return
+     * @throws AdException
+     */
     AdPlanResponse createAdPlan(AdPlanRequest request) throws AdException;
 
     List<AdPlan> getAdPlanByIds(AdPlanGetRequest request) throws AdException;
