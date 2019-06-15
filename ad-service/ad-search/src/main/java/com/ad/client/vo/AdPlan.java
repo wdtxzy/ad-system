@@ -1,4 +1,4 @@
-package com.ad.vo;
+package com.ad.client.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,18 +8,24 @@ import java.util.Date;
 
 /**
  * @Author : wangdi
- * @Date : create in 2019/6/9 22:01
+ * @Date : create in 2019/6/15 23:16
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateUserResponse {
+public class AdPlan {
+
+    private Long id;
 
     private Long userId;
 
-    private String username;
+    private String planName;
 
-    private String token;
+    private Integer planStatus;
+
+    private Date startDate;
+
+    private Date endDate;
 
     private Date createTime;
 

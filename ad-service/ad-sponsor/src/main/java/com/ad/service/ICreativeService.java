@@ -1,8 +1,8 @@
 package com.ad.service;
 
 import com.ad.exception.AdException;
-import com.ad.vo.CreativeRequest;
-import com.ad.vo.CreativeResponse;
+import com.ad.client.vo.CreativeRequest;
+import com.ad.client.vo.CreativeResponse;
 
 /**
  * @Author : wangdi

@@ -1,19 +1,19 @@
-package com.ad.vo;
+package com.ad.client.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 /**
  * @Author : wangdi
- * @Date : create in 2019/6/11 23:35
+ * @Date : create in 2019/6/11 23:19
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdUnitDistrictResponse {
+public class AdUnitResponse {
 
-    private List<Long> ids;
+    private Long id;
+
+    private String unitName;
 }

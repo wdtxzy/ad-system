@@ -2,9 +2,9 @@ package com.ad.service;
 
 import com.ad.entity.AdPlan;
 import com.ad.exception.AdException;
-import com.ad.vo.AdPlanGetRequest;
-import com.ad.vo.AdPlanRequest;
-import com.ad.vo.AdPlanResponse;
+import com.ad.client.vo.AdPlanGetRequest;
+import com.ad.client.vo.AdPlanRequest;
+import com.ad.client.vo.AdPlanResponse;
 
 import java.util.List;
 

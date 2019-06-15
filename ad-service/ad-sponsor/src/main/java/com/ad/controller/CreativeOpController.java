@@ -2,8 +2,8 @@ package com.ad.controller;
 
 import com.ad.exception.AdException;
 import com.ad.service.ICreativeService;
-import com.ad.vo.CreativeRequest;
-import com.ad.vo.CreativeResponse;
+import com.ad.client.vo.CreativeRequest;
+import com.ad.client.vo.CreativeResponse;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

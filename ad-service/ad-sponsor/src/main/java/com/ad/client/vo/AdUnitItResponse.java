@@ -1,4 +1,4 @@
-package com.ad.vo;
+package com.ad.client.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,12 +8,12 @@ import java.util.List;
 
 /**
  * @Author : wangdi
- * @Date : create in 2019/6/11 23:32
+ * @Date : create in 2019/6/11 23:33
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdUnitKeywordResponse {
+public class AdUnitItResponse {
 
     private List<Long> ids;
 }
