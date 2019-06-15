@@ -1,7 +1,7 @@
 package com.ad.service;
 
 import com.ad.exception.AdException;
-import com.ad.client.vo.*;
+import com.ad.vo.*;
 
 /**
  * @Author : wangdi

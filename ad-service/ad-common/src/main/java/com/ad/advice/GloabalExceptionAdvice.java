@@ -1,7 +1,7 @@
 package com.ad.advice;
 
 import com.ad.exception.AdException;
-import com.ad.client.vo.CommonResponse;
+import com.ad.vo.CommonResponse;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

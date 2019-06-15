@@ -1,4 +1,4 @@
-package com.ad.client.vo;
+package com.ad.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,22 +8,20 @@ import java.util.List;
 
 /**
  * @Author : wangdi
- * @Date : create in 2019/6/11 23:32
+ * @Date : create in 2019/6/11 23:31
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdUnitItRequest {
+public class AdUnitKeywordRequest {
 
-    private List<UnitIt> list;
+    private List<UnitKeyword> list;
 
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class UnitIt {
-
+    public static class UnitKeyword {
         private Long unitId;
-
-        private String itTag;
+        private String keyword;
     }
 }

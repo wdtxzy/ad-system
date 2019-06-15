@@ -4,8 +4,8 @@ import com.ad.dao.CreativeRepository;
 import com.ad.entity.Creative;
 import com.ad.exception.AdException;
 import com.ad.service.ICreativeService;
-import com.ad.client.vo.CreativeRequest;
-import com.ad.client.vo.CreativeResponse;
+import com.ad.vo.CreativeRequest;
+import com.ad.vo.CreativeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

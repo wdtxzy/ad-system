@@ -1,4 +1,4 @@
-package com.ad.client.vo;
+package com.ad.vo;
 
 import com.ad.constant.CommonStatus;
 import com.ad.entity.Creative;
