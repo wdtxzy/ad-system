@@ -17,12 +17,20 @@ import java.util.concurrent.ConcurrentSkipListSet;
 /**
  * @Author : wangdi
  * @Date : create in 2019/6/16 09:35
+ * 关键字索引
  */
 @Slf4j
 @Component
 public class AdUnitKeywordIndex implements IndexAware<String, Set<Long>> {
 
+    /**
+     * <keyword,unitId Set>
+     */
     private static Map<String, Set<Long>> keywordUnitMap;
+
+    /**
+     * <unitId,keyword Set>
+     */
     private static Map<Long, Set<String>> unitKeywordMap;
 
     static {
