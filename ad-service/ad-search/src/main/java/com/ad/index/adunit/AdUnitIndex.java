@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @Author : wangdi
  * @Date : create in 2019/6/16 09:30
+ * 推广单元索引
  */
 @Slf4j
 @Component
