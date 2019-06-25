@@ -28,7 +28,7 @@ public class JsonTable {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class Column{
+    public static class Column {
 
         private String column;
     }
