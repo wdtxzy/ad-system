@@ -12,7 +12,7 @@ import com.github.shyiko.mysql.binlog.event.WriteRowsEventData;
  */
 public class BinlogServiceTest {
 
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) throws Exception {
 
         BinaryLogClient client = new BinaryLogClient(
                 "127.0.0.1",
@@ -23,13 +23,13 @@ public class BinlogServiceTest {
 
         client.registerEventListener(event -> {
             EventData data = event.getData();
-            if(data instanceof UpdateRowsEventData){
+            if (data instanceof UpdateRowsEventData) {
                 System.out.println("Update------------");
                 System.out.println(data.toString());
-            }else if (data instanceof WriteRowsEventData){
+            } else if (data instanceof WriteRowsEventData) {
                 System.out.println("Write----------");
                 System.out.println(data.toString());
-            }else if (data instanceof DeleteRowsEventData){
+            } else if (data instanceof DeleteRowsEventData) {
                 System.out.println("Delete------------");
                 System.out.println(data.toString());
             }
