@@ -7,11 +7,11 @@ import java.util.Map;
  * @Author : wangdi
  * @Date : create in 2019/6/25 23:09
  */
-public class Constanta {
+public class Constant {
 
     private static final String DB_NAME = "ad_system";
 
-    public static class AD_PLAN_TABLE_INFO{
+    public static class AD_PLAN_TABLE_INFO {
 
         public static final String TABLE_NAME = "ad_plan";
 
