@@ -2,9 +2,10 @@ package com.ad.index.creative;
 
 import com.ad.index.IndexAware;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -20,6 +21,24 @@ public class AdCreativeIndex implements IndexAware<Long, AdCreativeObject> {
 
     static {
         objectMap = new ConcurrentHashMap<>();
+    }
+
+    public List<AdCreativeObject> fetch(Collection<Long> adIds){
+        if(CollectionUtils.isEmpty(adIds)){
+            return Collections.emptyList();
+        }
+
+        List<AdCreativeObject> result = new ArrayList<>();
+
+        adIds.forEach( x->{
+            AdCreativeObject object = get(x);
+            if (object == null){
+                log.error("CreativeObject not found : {}",x);
+                return;
+            }
+            result.add(object);
+        });
+        return result;
     }
 
     @Override
